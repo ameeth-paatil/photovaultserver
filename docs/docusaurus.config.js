@@ -84,9 +84,9 @@ const config = {
       },
       navbar: {
         logo: {
-          alt: 'Immich Logo',
-          src: 'img/immich-logo-inline-light.png',
-          srcDark: 'img/immich-logo-inline-dark.png',
+          alt: 'Photo Vault Logo',
+          src: 'img/pv-logo-inline-light.png',
+          srcDark: 'img/pv-logo-inline-dark.png',
           className: 'rounded-none',
         },
         items: [

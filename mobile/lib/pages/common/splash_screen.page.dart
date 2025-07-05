@@ -89,7 +89,7 @@ class SplashScreenPageState extends ConsumerState<SplashScreenPage> {
     return const Scaffold(
       body: Center(
         child: Image(
-          image: AssetImage('assets/immich-logo.png'),
+          image: AssetImage('assets/pv-logo.png'),
           width: 80,
           filterQuality: FilterQuality.high,
         ),

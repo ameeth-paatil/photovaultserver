@@ -154,7 +154,7 @@ class AlbumInfoCard extends HookConsumerWidget {
                       width: double.infinity,
                       height: double.infinity,
                       image: AssetImage(
-                        'assets/immich-logo.png',
+                        'assets/pv-logo.png',
                       ),
                       fit: BoxFit.cover,
                     ),

@@ -57,8 +57,8 @@ class ImmichAppBarDialog extends HookConsumerWidget {
           Center(
             child: Image.asset(
               context.isDarkTheme
-                  ? 'assets/immich-text-dark.png'
-                  : 'assets/immich-text-light.png',
+                  ? 'assets/pv-text-dark.png'
+                  : 'assets/pv-text-light.png',
               height: 16,
             ),
           ),

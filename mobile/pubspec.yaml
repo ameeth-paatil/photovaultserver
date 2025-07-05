@@ -1,5 +1,5 @@
 name: immich_mobile
-description: Immich - selfhosted backup media file on mobile phone
+description: Photo Vault - Indias hosted backup media file on mobile phone
 
 publish_to: 'none'
 version: 1.135.3+204
@@ -141,7 +141,7 @@ flutter:
         - asset: fonts/overpass/OverpassMono.ttf
 
 flutter_launcher_icons:
-  image_path_android: 'assets/immich-logo.png'
+  image_path_android: 'assets/pv-logo.png'
   adaptive_icon_background: '#ffffff'
   adaptive_icon_foreground: 'assets/immich-logo-android-adaptive-icon.png'
   image_path_ios: 'assets/immich-logo-w-bg.png'

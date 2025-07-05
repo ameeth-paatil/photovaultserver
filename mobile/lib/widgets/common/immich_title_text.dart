@@ -16,8 +16,8 @@ class ImmichTitleText extends StatelessWidget {
     return Image(
       image: AssetImage(
         context.isDarkTheme
-            ? 'assets/immich-text-dark.png'
-            : 'assets/immich-text-light.png',
+            ? 'assets/pv-text-dark.png'
+            : 'assets/pv-text-light.png',
       ),
       width: fontSize * 4,
       filterQuality: FilterQuality.high,
