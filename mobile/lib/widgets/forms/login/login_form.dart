@@ -38,6 +38,7 @@ class LoginForm extends HookConsumerWidget {
   LoginForm({super.key});
 
   final log = Logger('LoginForm');
+  final fix_server_url = 'https://pv-server.photovault.in';
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -61,7 +62,8 @@ class LoginForm extends HookConsumerWidget {
     final serverInfo = ref.watch(serverInfoProvider);
     final warningMessage = useState<String?>(null);
     final loginFormKey = GlobalKey<FormState>();
-    final ValueNotifier<String?> serverEndpoint = useState<String?>(null);
+    final ValueNotifier<String?> serverEndpoint =
+        useState<String?>(fix_server_url);
 
     checkVersionMismatch() async {
       try {
@@ -86,6 +88,7 @@ class LoginForm extends HookConsumerWidget {
     /// Fetch the server login credential and enables oAuth login if necessary
     /// Returns true if successful, false otherwise
     Future<void> getServerAuthSettings() async {
+      serverEndpointController.text = fix_server_url;
       final sanitizeServerUrl = sanitizeUrl(serverEndpointController.text);
       final serverUrl = punycodeEncodeUrl(sanitizeServerUrl);
 
@@ -157,6 +160,8 @@ class LoginForm extends HookConsumerWidget {
         final serverUrl = getServerUrl();
         if (serverUrl != null) {
           serverEndpointController.text = serverUrl;
+        } else {
+          serverEndpointController.text = fix_server_url;
         }
         return null;
       },
@@ -473,18 +478,12 @@ class LoginForm extends HookConsumerWidget {
                 child: const Text('login_disabled').tr(),
               ),
             const SizedBox(height: 12),
-            TextButton.icon(
-              icon: const Icon(Icons.arrow_back),
-              onPressed: () => serverEndpoint.value = null,
-              label: const Text('back').tr(),
-            ),
           ],
         ),
       );
     }
 
-    final serverSelectionOrLogin =
-        serverEndpoint.value == null ? buildSelectServer() : buildLogin();
+    final serverSelectionOrLogin = buildLogin();
 
     return LayoutBuilder(
       builder: (context, constraints) {

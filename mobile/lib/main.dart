@@ -234,7 +234,7 @@ class ImmichAppState extends ConsumerState<ImmichApp>
         localeProvider.overrideWithValue(context.locale),
       ],
       child: MaterialApp.router(
-        title: 'Immich',
+        title: 'Photo Vault',
         debugShowCheckedModeBanner: true,
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
