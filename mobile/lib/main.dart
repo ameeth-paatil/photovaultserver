@@ -73,7 +73,7 @@ Future<void> initApp() async {
 
   await DynamicTheme.fetchSystemPalette();
 
-  final log = Logger("ImmichErrorLogger");
+  final log = Logger("PVErrorLogger");
 
   FlutterError.onError = (details) {
     FlutterError.presentError(details);
