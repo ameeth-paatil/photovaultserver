@@ -53,8 +53,8 @@ class LoginForm extends HookConsumerWidget {
     final serverEndpointFocusNode = useFocusNode();
     final isLoading = useState<bool>(false);
     final isLoadingServer = useState<bool>(false);
-    final isOauthEnable = useState<bool>(false);
-    final isPasswordLoginEnable = useState<bool>(false);
+    final isOauthEnable = useState<bool>(true);
+    final isPasswordLoginEnable = useState<bool>(true);
     final oAuthButtonLabel = useState<String>('OAuth');
     final logoAnimationController = useAnimationController(
       duration: const Duration(seconds: 60),
@@ -420,7 +420,7 @@ class LoginForm extends HookConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            buildVersionCompatWarning(),
+            //buildVersionCompatWarning(),
             Text(
               sanitizeUrl(serverEndpointController.text),
               style: context.textTheme.displaySmall,
